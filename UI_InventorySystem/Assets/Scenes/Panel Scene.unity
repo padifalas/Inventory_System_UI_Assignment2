@@ -270,8 +270,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420033}
-  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -355,35 +353,6 @@ Transform:
   - {fileID: 1049058294}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 532d53689c102b24fa50c756ea5f06d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shopBackpackPosition: {fileID: 2107190558}
-  backpackChestPosition: {fileID: 1049058294}
-  transitionSpeed: 5
---- !u!114 &519420034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 541988d18c3bf344f88ea40dbdb7d3e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ChestTargetPosition: {fileID: 2107190558}
-  ShopTargetPosition: {fileID: 1049058294}
 --- !u!1 &710621484
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,7 +618,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 822477812}
         m_TargetAssemblyTypeName: PanelScrollController, Assembly-CSharp
-        m_MethodName: ScrollToRight
+        m_MethodName: BackBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -858,6 +827,8 @@ MonoBehaviour:
   backpackPanel: {fileID: 801010159}
   chestPanel: {fileID: 776874619}
   scrollSpeed: 350
+  backButton: {fileID: 794184966}
+  nextButton: {fileID: 1291769925}
 --- !u!1 &970398721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1289,7 +1260,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 822477812}
         m_TargetAssemblyTypeName: PanelScrollController, Assembly-CSharp
-        m_MethodName: ScrollToLeft
+        m_MethodName: NextBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1476,7 +1447,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1111.7999, y: 0}
+  m_AnchoredPosition: {x: -1111.7998, y: 0}
   m_SizeDelta: {x: -2223.53, y: -209.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1757060723
