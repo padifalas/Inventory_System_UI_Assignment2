@@ -3,65 +3,102 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PanelScrollController : MonoBehaviour
+public class PanelControl : MonoBehaviour
 {
+    public Camera mainCamera;
     public RectTransform shopPanel;
     public RectTransform backpackPanel;
     public RectTransform chestPanel;
     public float scrollSpeed = 350f;
 
-    private Vector3 initiallShopPosition;
-    private Vector3 intitialBackpackPosition;
-    private Vector3 initiallChestPosition;
-    
+    private Vector3 initialCameraPosition;
+    private Vector3 initialShopPosition;
+    private Vector3 initialBackpackPosition;
+    private Vector3 initialChestPosition;
+
     public Button backButton;
     public Button nextButton;
 
+    private bool showShopAndBackpack = true;
+
     private void Start()
     {
-        // these the original positions of the panels
-        //initializes them
-        initiallShopPosition = shopPanel.localPosition;
-        intitialBackpackPosition = backpackPanel.localPosition;
-        initiallChestPosition = chestPanel.localPosition;
+        // Record the original positions of the camera and panels
+        initialCameraPosition = mainCamera.transform.position;
+        initialShopPosition = shopPanel.localPosition;
+        initialBackpackPosition = backpackPanel.localPosition;
+        initialChestPosition = chestPanel.localPosition;
+
+        // Initially show only shop and backpack panels
+        ShowShopAndBackpackPanels();
         
-        // Hide the back button initially
+        // Initially show next button
+        nextButton.gameObject.SetActive(true);
         backButton.gameObject.SetActive(false);
+    }
+
+    public void TogglePanels()
+    {
+        showShopAndBackpack = !showShopAndBackpack;
+
+        if (showShopAndBackpack)
+        {
+            ShowShopAndBackpackPanels();
+            nextButton.gameObject.SetActive(true);
+            backButton.gameObject.SetActive(false);
+        }
+        else
+        {
+            ShowBackpackAndChestPanels();
+            nextButton.gameObject.SetActive(false);
+            backButton.gameObject.SetActive(true);
+        }
+    }
+
+    private void ShowShopAndBackpackPanels()
+    {
+        mainCamera.transform.position = initialCameraPosition;
+        shopPanel.gameObject.SetActive(true);
+        backpackPanel.gameObject.SetActive(true);
+        chestPanel.gameObject.SetActive(false);
+
+        shopPanel.localPosition = initialShopPosition;
+        backpackPanel.localPosition = initialBackpackPosition;
+    }
+
+    private void ShowBackpackAndChestPanels()
+    {
+        mainCamera.transform.position = initialCameraPosition + Vector3.right * Screen.width;
+        shopPanel.gameObject.SetActive(false);
+        backpackPanel.gameObject.SetActive(true);
+        chestPanel.gameObject.SetActive(true);
+
+        backpackPanel.localPosition = initialShopPosition;
+        chestPanel.localPosition = initialBackpackPosition;
     }
 
     public void NextBtn()
     {
-        // calculatess the target position for scrolling left
-        //subtract screen width from the original/initial positions that are in the start method at the top
-        Vector3 targetShopPosition = initiallShopPosition - Vector3.right * Screen.width;
-        Vector3 targetBackpackPosition = intitialBackpackPosition - Vector3.right * Screen.width;
-        Vector3 targetChestPosition = initiallChestPosition - Vector3.right * Screen.width;
-
-        // Move the panels towards the target position
-        shopPanel.localPosition = Vector3.Lerp(shopPanel.localPosition, targetShopPosition, Time.deltaTime * scrollSpeed); //vector3.lerp is basically linear interpolation - smotthly transitions objects(panels) fom one position to another
-        backpackPanel.localPosition = Vector3.Lerp(backpackPanel.localPosition, targetBackpackPosition, Time.deltaTime * scrollSpeed);
-        chestPanel.localPosition = Vector3.Lerp(chestPanel.localPosition, targetChestPosition, Time.deltaTime * scrollSpeed);
-        
-        // Deactivate next button, activate back button
-        nextButton.gameObject.SetActive(false);
-        backButton.gameObject.SetActive(true);
+        if (showShopAndBackpack)
+        {
+            mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, initialCameraPosition, Time.deltaTime * scrollSpeed);
+        }
+        else
+        {
+           
+        }
     }
-
+    
+    
     public void BackBtn()
     {
-        // Calculate the target position for scrolling right 
-        //resets the target posi - moves panels BACK to initial position
-        Vector3 targetShopPosition = initiallShopPosition;
-        Vector3 targetBackpackPosition = intitialBackpackPosition;
-        Vector3 targetChestPosition = initiallChestPosition;
-
-        // Move the panels towards the target position
-        shopPanel.localPosition = Vector3.Lerp(shopPanel.localPosition, targetShopPosition, Time.deltaTime * scrollSpeed);
-        backpackPanel.localPosition = Vector3.Lerp(backpackPanel.localPosition, targetBackpackPosition, Time.deltaTime * scrollSpeed);
-        chestPanel.localPosition = Vector3.Lerp(chestPanel.localPosition, targetChestPosition, Time.deltaTime * scrollSpeed);
-        
-        // Activate next button, deactivate back button
-        nextButton.gameObject.SetActive(true);
-        backButton.gameObject.SetActive(false);
+        if (showShopAndBackpack)
+        {
+            mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, initialCameraPosition - Vector3.right * Screen.width, Time.deltaTime * scrollSpeed);
+        }
+        else
+        {
+           
+        }
     }
 }
