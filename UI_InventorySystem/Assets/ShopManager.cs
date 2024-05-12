@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +11,7 @@ public class ShopManager : MonoBehaviour
     public GameObject backpackSlotPrefab; // Prefab for empty slot in the backpack
 
     // Define items and their prices
-    private Item[] items = {
+    public Item[] shopItems = {
         new Item("Hammer", 3),
         new Item("Gun", 5),
         new Item("Armour", 15),
@@ -26,15 +24,15 @@ public class ShopManager : MonoBehaviour
         new Item("Shield", 50),
     };
 
-    private void Start()
+    public void Start()
     {
         PopulateShop();
         PopulateBackpack();
     }
 
-    private void PopulateShop()
+    public void PopulateShop()
     {
-        foreach (Item item in items)
+        foreach (Item item in shopItems)
         {
             // Instantiate item slot in the shop panel
             GameObject newItemSlot = Instantiate(itemSlotPrefab, shopContent);
@@ -42,18 +40,27 @@ public class ShopManager : MonoBehaviour
             newItemSlot.transform.Find("ItemPrice").GetComponent<Text>().text = "$" + item.price.ToString();
             Button buyButton = newItemSlot.transform.Find("BuyButton").GetComponent<Button>();
             
-            // Add listener to the buy button to call BuyItem method with the corresponding item
-            buyButton.onClick.AddListener(() => BuyItem(item));
+            // Add listener to the buy button to call Buy method with the corresponding item
+            buyButton.onClick.AddListener(() => Buy(item));
         }
     }
 
-    private void PopulateBackpack()
+    public void PopulateBackpack()
     {
         // Populate backpack with empty slots
         for (int i = 0; i < backpackPanel.transform.childCount; i++)
         {
             Instantiate(backpackSlotPrefab, backpackContent);
         }
+    }
+
+    // This method will be called when the buy button is clicked
+    public void Buy(Item item)
+    {
+        // Call the BuyItem method with the corresponding item
+        BuyItem(item);
+        
+        Debug.Log("Item was bought");
     }
 
     public void BuyItem(Item item)
@@ -73,7 +80,7 @@ public class ShopManager : MonoBehaviour
                     GameObject newItem = new GameObject(item.name);
                     newItem.transform.SetParent(emptySlot);
                     newItem.transform.localPosition = Vector3.zero;
-                    newItem.AddComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + item.name); // Assuming you have sprites with the same name as items
+                    newItem.AddComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + item.name); 
                 }
                 else
                 {
@@ -91,7 +98,7 @@ public class ShopManager : MonoBehaviour
         }
     }
 
-    private Transform FindEmptySlot()
+    public Transform FindEmptySlot()
     {
         foreach (Transform slot in backpackContent)
         {
