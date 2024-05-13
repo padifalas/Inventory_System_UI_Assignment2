@@ -29,7 +29,7 @@ public class ShopButtons : MonoBehaviour
         if (MoneyManager.currentMoney >= hammerCost && !hasItemOne)
         {
             // Deduct the cost of the hammer
-            MoneyManager.DeductAmount((int)hammerCost);
+            MoneyManager.Buy((int)hammerCost);
             
             // Move the hammer to the backpack panel
             Hammer.SetActive(true); // Activate the hammer
@@ -49,7 +49,7 @@ public class ShopButtons : MonoBehaviour
         if (MoneyManager.currentMoney >= hammerCost && !hasItemOne)
         {
             // Deduct the cost of the hammer
-            MoneyManager.DeductAmount((int)GunCost);
+            MoneyManager.Buy((int)GunCost);
             
             // Move the hammer to the backpack panel
             Gun.SetActive(true); // Activate the hammer

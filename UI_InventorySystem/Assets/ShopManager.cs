@@ -68,7 +68,7 @@ public class ShopManager : MonoBehaviour
         // Check if the player has enough funds to buy the item
         if (moneyManager.GetBalance() >= item.price)
         {
-            if (moneyManager.DeductAmount(item.price))
+            if (moneyManager.Buy(item.price))
             {
                 Debug.Log(item.name + " bought successfully!");
 
