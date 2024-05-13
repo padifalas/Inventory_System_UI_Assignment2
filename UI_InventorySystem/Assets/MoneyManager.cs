@@ -9,7 +9,8 @@ public class ShopItem
 {
     public string itemName; // Name of the item
     public Sprite itemIcon; // UI icon for the item
-    public float itemCost; // Cost of the item
+    public int itemCost; // Cost of the item
+    public int sellPrice; 
 }
 
 public class MoneyManager : MonoBehaviour
@@ -64,12 +65,25 @@ public class MoneyManager : MonoBehaviour
             return false; // Return false if the player doesn't have enough money
         }
     }
+    
+    public void SellItem(ShopItem item)
+    {
+        currentMoney += Mathf.RoundToInt(item.sellPrice); // Add sell price to current money
+        UpdateMoneyText(); // Update money text after selling item
+
+        // Remove item from backpack (implement this based on your backpack UI logic)
+        RemoveItemFromBackpack(item);
+        Debug.Log(item.itemName + " Was sold  for " + item.sellPrice);
+    }
+
 
     // Method to add money when selling an item
     public void Sell(float amount)
     {
         currentMoney += Mathf.RoundToInt(amount);
         UpdateMoneyText(); // Update money text after adding money
+        
+        Debug.Log("ITEM SOLD");
     }
 
     // Method to update money text in the UI
@@ -102,5 +116,11 @@ public class MoneyManager : MonoBehaviour
                 break; // Exit the loop after placing the item
             }
         }
+    }
+    
+    // Method to remove item from backpack
+    private void RemoveItemFromBackpack(ShopItem item)
+    {
+        // Implement logic to remove the item from the backpack
     }
 }
