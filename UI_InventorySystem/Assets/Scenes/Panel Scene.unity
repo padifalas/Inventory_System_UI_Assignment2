@@ -274,6 +274,16 @@ MonoBehaviour:
   itemIconPrefab: {fileID: 886563505}
   backpackPanel: {fileID: 801010159}
   itemCost: 35
+  Hammer: {fileID: 0}
+  Gun: {fileID: 0}
+  Armour: {fileID: 0}
+  Boots: {fileID: 0}
+  Gloves: {fileID: 0}
+  BowArrow: {fileID: 0}
+  GreenPotion: {fileID: 0}
+  Lantern: {fileID: 0}
+  TNT: {fileID: 0}
+  Shield: {fileID: 0}
 --- !u!1 &150785334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,6 +1566,16 @@ MonoBehaviour:
   itemIconPrefab: {fileID: 1545457666}
   backpackPanel: {fileID: 801010159}
   itemCost: 11
+  Hammer: {fileID: 0}
+  Gun: {fileID: 0}
+  Armour: {fileID: 0}
+  Boots: {fileID: 0}
+  Gloves: {fileID: 0}
+  BowArrow: {fileID: 0}
+  GreenPotion: {fileID: 0}
+  Lantern: {fileID: 0}
+  TNT: {fileID: 0}
+  Shield: {fileID: 0}
 --- !u!1 &427158309
 GameObject:
   m_ObjectHideFlags: 0
@@ -2068,7 +2088,7 @@ Transform:
   m_GameObject: {fileID: 668363157}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.392034, y: -3.3919363, z: -0.10489426}
+  m_LocalPosition: {x: -3.39, y: -2.29, z: -0.10489426}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2925,55 +2945,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &866144308
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 866144310}
-  - component: {fileID: 866144309}
-  m_Layer: 0
-  m_Name: BUY ARMOUR BTN
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &866144309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 866144308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7103379e30a96a0438168a559aa30a61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moneyManager: {fileID: 1683975086}
-  itemName: Armour
-  itemIconPrefab: {fileID: 4722172182354852388, guid: 4b826208ab92cdb4c8cc699de9afe53c, type: 3}
-  backpackPanel: {fileID: 801010159}
-  itemCost: 14.99
---- !u!4 &866144310
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 866144308}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5999358, y: 1.2215874, z: -0.025192712}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &886563505 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6678470115600702230, guid: 75d2d566e878ad04780662702a8d4bfa, type: 3}
@@ -3269,6 +3240,16 @@ MonoBehaviour:
   itemIconPrefab: {fileID: 1729156186}
   backpackPanel: {fileID: 801010159}
   itemCost: 18
+  Hammer: {fileID: 554580055}
+  Gun: {fileID: 442001618}
+  Armour: {fileID: 329349089}
+  Boots: {fileID: 1729156186}
+  Gloves: {fileID: 828457357}
+  BowArrow: {fileID: 1545457666}
+  GreenPotion: {fileID: 1473536547}
+  Lantern: {fileID: 1556171983}
+  TNT: {fileID: 545891095}
+  Shield: {fileID: 886563505}
 --- !u!1 &919066325
 GameObject:
   m_ObjectHideFlags: 0
@@ -4058,6 +4039,16 @@ MonoBehaviour:
   itemIconPrefab: {fileID: 329349089}
   backpackPanel: {fileID: 801010159}
   itemCost: 15
+  Hammer: {fileID: 554580055}
+  Gun: {fileID: 442001618}
+  Armour: {fileID: 329349089}
+  Boots: {fileID: 1729156186}
+  Gloves: {fileID: 828457357}
+  BowArrow: {fileID: 0}
+  GreenPotion: {fileID: 0}
+  Lantern: {fileID: 0}
+  TNT: {fileID: 0}
+  Shield: {fileID: 0}
 --- !u!1 &1093576149
 GameObject:
   m_ObjectHideFlags: 0
@@ -4600,6 +4591,16 @@ MonoBehaviour:
   itemIconPrefab: {fileID: 1473536547}
   backpackPanel: {fileID: 801010159}
   itemCost: 9
+  Hammer: {fileID: 0}
+  Gun: {fileID: 0}
+  Armour: {fileID: 0}
+  Boots: {fileID: 0}
+  Gloves: {fileID: 0}
+  BowArrow: {fileID: 0}
+  GreenPotion: {fileID: 0}
+  Lantern: {fileID: 0}
+  TNT: {fileID: 0}
+  Shield: {fileID: 0}
 --- !u!1 &1189229148
 GameObject:
   m_ObjectHideFlags: 0
@@ -5251,11 +5252,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c84e5c82129be3e46abb31d36de8e240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyManager: {fileID: 0}
+  moneyManager: {fileID: 1683975086}
   itemType: 4
   itemIconPrefab: {fileID: 828457357}
   backpackPanel: {fileID: 801010159}
   itemCost: 6
+  Hammer: {fileID: 554580055}
+  Gun: {fileID: 0}
+  Armour: {fileID: 0}
+  Boots: {fileID: 0}
+  Gloves: {fileID: 828457357}
+  BowArrow: {fileID: 0}
+  GreenPotion: {fileID: 0}
+  Lantern: {fileID: 0}
+  TNT: {fileID: 0}
+  Shield: {fileID: 0}
 --- !u!1 &1291769924
 GameObject:
   m_ObjectHideFlags: 0
@@ -5540,6 +5551,16 @@ MonoBehaviour:
   itemIconPrefab: {fileID: 1556171983}
   backpackPanel: {fileID: 801010159}
   itemCost: 8
+  Hammer: {fileID: 0}
+  Gun: {fileID: 0}
+  Armour: {fileID: 0}
+  Boots: {fileID: 0}
+  Gloves: {fileID: 0}
+  BowArrow: {fileID: 0}
+  GreenPotion: {fileID: 0}
+  Lantern: {fileID: 0}
+  TNT: {fileID: 0}
+  Shield: {fileID: 0}
 --- !u!1 &1334415527
 GameObject:
   m_ObjectHideFlags: 0
@@ -6039,6 +6060,7 @@ GameObject:
   - component: {fileID: 1405678885}
   - component: {fileID: 1405678884}
   - component: {fileID: 1405678883}
+  - component: {fileID: 1405678886}
   m_Layer: 5
   m_Name: BuyBtn
   m_TagString: Untagged
@@ -6110,7 +6132,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2085662444}
+      - m_Target: {fileID: 1405678886}
         m_TargetAssemblyTypeName: BuyButton, Assembly-CSharp
         m_MethodName: BuyItem
         m_Mode: 1
@@ -6160,6 +6182,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405678881}
   m_CullTransparentMesh: 1
+--- !u!114 &1405678886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405678881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7c89afc44a5d74ab9c61a0d12fdaed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyManager: {fileID: 1683975086}
+  item:
+    itemName: Hammer
+    itemIcon: {fileID: 21300000, guid: 0b38b87da6a99fd428935ad9a28feae9, type: 3}
+    itemCost: 5
 --- !u!1 &1437820207
 GameObject:
   m_ObjectHideFlags: 0
@@ -6175,7 +6214,7 @@ GameObject:
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1437820208
 Transform:
   m_ObjectHideFlags: 0
@@ -6185,7 +6224,7 @@ Transform:
   m_GameObject: {fileID: 1437820207}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.47, y: 1.660756, z: -0.0013535216}
+  m_LocalPosition: {x: 0.2, y: -0.63, z: -0.0013535216}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6529,64 +6568,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475812561}
   m_CullTransparentMesh: 1
---- !u!1 &1490424969
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1490424971}
-  - component: {fileID: 1490424972}
-  m_Layer: 0
-  m_Name: SHOP MANAGER
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1490424971
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1490424969}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.5606656, y: 2.0147152, z: -0.058984347}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1490424972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1490424969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c42065c0576891b4887fb17c2bde6f56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Hammer: {fileID: 554580055}
-  MoneyManager: {fileID: 1683975086}
-  hasItemOne: 0
-  storedItem: 0
-  hammerCost: 3
-  GunCost: 3.99
-  ArmourCost: 14.99
-  BootsCost: 17.99
-  GlovesCost: 4.99
-  BowArrowCost: 8.99
-  GreenPotionCost: 6.99
-  LanternCost: 3.99
-  TntCost: 9.99
-  ShieldCost: 44.99
 --- !u!1 &1493922404
 GameObject:
   m_ObjectHideFlags: 0
@@ -6738,7 +6719,17 @@ MonoBehaviour:
   itemIconPrefab: {fileID: 545891095}
   backpackPanel: {fileID: 801010159}
   itemCost: 7
---- !u!1 &1502131423
+  Hammer: {fileID: 0}
+  Gun: {fileID: 0}
+  Armour: {fileID: 0}
+  Boots: {fileID: 0}
+  Gloves: {fileID: 0}
+  BowArrow: {fileID: 0}
+  GreenPotion: {fileID: 0}
+  Lantern: {fileID: 0}
+  TNT: {fileID: 0}
+  Shield: {fileID: 0}
+--- !u!1 &1508766214
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6746,42 +6737,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1502131425}
-  - component: {fileID: 1502131424}
+  - component: {fileID: 1508766215}
   m_Layer: 0
-  m_Name: BUT GUN BTN
+  m_Name: BUY BUTTON
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1502131424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1502131423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7036b515d0b7c0148be029cd5fcdd6db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moneyManager: {fileID: 1683975086}
-  itemName: Gun
-  itemIconPrefab: {fileID: 442001618}
-  backpackPanel: {fileID: 801010159}
-  itemCost: 3.99
---- !u!4 &1502131425
+--- !u!4 &1508766215
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1502131423}
+  m_GameObject: {fileID: 1508766214}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.884349, y: 0.22511473, z: -0.000039275852}
+  m_LocalPosition: {x: -7.1113343, y: 1.7593569, z: -0.007294228}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6955,6 +6928,8 @@ GameObject:
   - component: {fileID: 1590337569}
   - component: {fileID: 1590337568}
   - component: {fileID: 1590337567}
+  - component: {fileID: 1590337570}
+  - component: {fileID: 1590337571}
   m_Layer: 5
   m_Name: BuyBtn (1)
   m_TagString: Untagged
@@ -7026,7 +7001,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1502131424}
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: BuyGun, Assembly-CSharp
+        m_MethodName: BuyItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1590337571}
         m_TargetAssemblyTypeName: BuyGun, Assembly-CSharp
         m_MethodName: BuyItem
         m_Mode: 1
@@ -7076,6 +7063,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590337565}
   m_CullTransparentMesh: 1
+--- !u!114 &1590337570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590337565}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c84e5c82129be3e46abb31d36de8e240, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyManager: {fileID: 0}
+  itemType: 1
+  itemIconPrefab: {fileID: 442001618}
+  backpackPanel: {fileID: 801010159}
+  itemCost: 4.99
+  Hammer: {fileID: 0}
+  Gun: {fileID: 0}
+  Armour: {fileID: 0}
+  Boots: {fileID: 0}
+  Gloves: {fileID: 0}
+  BowArrow: {fileID: 0}
+  GreenPotion: {fileID: 0}
+  Lantern: {fileID: 0}
+  TNT: {fileID: 0}
+  Shield: {fileID: 0}
+--- !u!114 &1590337571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590337565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7036b515d0b7c0148be029cd5fcdd6db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyManager: {fileID: 1683975086}
+  itemName: Gun
+  itemIconPrefab: {fileID: 442001618}
+  backpackPanel: {fileID: 801010159}
+  itemCost: 8
 --- !u!1 &1595188012
 GameObject:
   m_ObjectHideFlags: 0
@@ -7560,39 +7591,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad448e53b67406540a3d3ba00eeb14eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingAmount: 100
   currentMoney: 100
   moneyText: {fileID: 2080277536}
-  shopItems:
-  - itemName: Hammer
-    itemIcon: {fileID: 21300000, guid: 0b38b87da6a99fd428935ad9a28feae9, type: 3}
-    itemCost: 3.99
-  - itemName: Gun
-    itemIcon: {fileID: 21300000, guid: 6aa60c1b74cb2c841b3aaae7f3a94c8c, type: 3}
-    itemCost: 4.99
-  - itemName: Armour
-    itemIcon: {fileID: 21300000, guid: e16100601e4606b4782554d463de0bab, type: 3}
-    itemCost: 14.99
-  - itemName: Boots
-    itemIcon: {fileID: 21300000, guid: a4d06be3926015446a1254d42f72f569, type: 3}
-    itemCost: 12.99
-  - itemName: Gloves
-    itemIcon: {fileID: 21300000, guid: 8c63f7691890fda43b180ec76e7c7aff, type: 3}
-    itemCost: 6.99
-  - itemName: BowArrow
-    itemIcon: {fileID: 21300000, guid: cb19e9b3506e2854e8e22f02c8996e63, type: 3}
-    itemCost: 8.99
-  - itemName: GreenPotion
-    itemIcon: {fileID: 21300000, guid: 619bb6c9042f8634982d80fe157636c0, type: 3}
-    itemCost: 11.99
-  - itemName: Lantern
-    itemIcon: {fileID: 21300000, guid: dd7d708f759baab4b985d53f1e7d144f, type: 3}
-    itemCost: 3.99
-  - itemName: TNT
-    itemIcon: {fileID: 21300000, guid: c4f9a47a6d08e2a4f9fe5a2d1f06fbc8, type: 3}
-    itemCost: 9.99
-  - itemName: Shield
-    itemIcon: {fileID: 21300000, guid: ed1e4bbce05b0cc438171d626534a8d2, type: 3}
-    itemCost: 49.99
+  backpackPanel: {fileID: 801010159}
+  hammerPrefab: {fileID: 554580055}
+  gunPrefab: {fileID: 442001618}
+  armourPrefab: {fileID: 329349089}
+  BootsPrefab: {fileID: 1729156186}
+  GlovesPrefab: {fileID: 828457357}
+  BowArrowPrefab: {fileID: 1545457666}
+  GreenPotionPrefab: {fileID: 1473536547}
+  LanternPrefab: {fileID: 1556171983}
+  TNTprefab: {fileID: 545891095}
+  ShieldPrefab: {fileID: 886563505}
 --- !u!1 &1729156186 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1506094611310210178, guid: 032554e5d161a994cbb78bd353df72e3, type: 3}
@@ -7603,72 +7615,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 123295497487304554, guid: 032554e5d161a994cbb78bd353df72e3, type: 3}
   m_PrefabInstance: {fileID: 6724908320737190038}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1739760040
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1739760042}
-  - component: {fileID: 1739760041}
-  - component: {fileID: 1739760043}
-  m_Layer: 0
-  m_Name: BUY BUTTONS
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1739760041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739760040}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd027014b74bc6b4bb8518d4f0986dbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moneyManager: {fileID: 1683975086}
-  itemPrefab: {fileID: 554580055}
-  backpackPanel: {fileID: 801010159}
-  itemCost: 3.99
---- !u!4 &1739760042
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739760040}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5156894, y: 0.54727244, z: -0.025192712}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1739760043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739760040}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e824dfb4d37e8b49882a2271c293d06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moneyManager: {fileID: 1683975086}
-  itemName: Armour
-  itemIconPrefab: {fileID: 4722172182354852388, guid: 4b826208ab92cdb4c8cc699de9afe53c, type: 3}
-  backpackPanel: {fileID: 801010159}
-  itemCost: 49.99
 --- !u!1 &1757060721
 GameObject:
   m_ObjectHideFlags: 0
@@ -7715,7 +7661,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1015.6997, y: 0}
+  m_AnchoredPosition: {x: -1015.6998, y: 0}
   m_SizeDelta: {x: -2031.4, y: -209.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1757060723
@@ -9388,54 +9334,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2080277533}
   m_CullTransparentMesh: 1
---- !u!1 &2085662443
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2085662445}
-  - component: {fileID: 2085662444}
-  m_Layer: 0
-  m_Name: BUY HAMMER BTN
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2085662444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2085662443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de7c89afc44a5d74ab9c61a0d12fdaed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moneyManager: {fileID: 1683975086}
-  itemName: Hammer
-  itemIcon: {fileID: 554580055}
-  itemCost: 3.99
---- !u!4 &2085662445
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2085662443}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.8682313, y: 1.2870916, z: 0.0075662234}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2107190557
 GameObject:
   m_ObjectHideFlags: 0
@@ -10265,10 +10163,6 @@ SceneRoots:
   - {fileID: 1964621842}
   - {fileID: 1268847052}
   - {fileID: 1683975085}
-  - {fileID: 1490424971}
   - {fileID: 668363159}
   - {fileID: 1437820208}
-  - {fileID: 2085662445}
-  - {fileID: 1502131425}
-  - {fileID: 1739760042}
-  - {fileID: 866144310}
+  - {fileID: 1508766215}

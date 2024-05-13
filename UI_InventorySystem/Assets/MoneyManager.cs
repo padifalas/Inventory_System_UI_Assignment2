@@ -14,18 +14,29 @@ public class ShopItem
 
 public class MoneyManager : MonoBehaviour
 {
-    private int startingAmount = 100; // Starting balance
+    public int startingAmount = 100; // Starting balance
     public int currentMoney; // Current amount of money
     public TextMeshProUGUI moneyText; // Reference to the TextMeshPro text element
 
-    // Dictionary to store items and their quantities in the player's inventory
-    public Dictionary<string, int> inventory = new Dictionary<string, int>();
+    // Reference to the backpack panel
+    public Transform backpackPanel;
+    
+    public GameObject hammerPrefab; // Example field for the hammer prefab
+    public GameObject gunPrefab;
+    public GameObject armourPrefab;
 
-    // Array of shop items
-    public ShopItem[] shopItems;
+    public GameObject BootsPrefab,
+        GlovesPrefab,
+        BowArrowPrefab,
+        GreenPotionPrefab,
+        LanternPrefab,
+        TNTprefab,
+        ShieldPrefab; 
+
+
 
     // Method called when the script starts
-    private void Start()
+    public void Start()
     {
         currentMoney = startingAmount; // Initialize current money to starting money
         UpdateMoneyText(); // Update money text on start
@@ -38,12 +49,13 @@ public class MoneyManager : MonoBehaviour
     }
 
     // Method to deduct money when buying an item
-    // Method to deduct money when buying an item
-    public bool Buy(float cost)
+    public bool Buy(ShopItem item)
     {
-        if (currentMoney >= cost)
+        if (currentMoney >= item.itemCost)
         {
-            currentMoney -= (int)cost; // Cast cost to int to truncate decimal places
+            currentMoney -= Mathf.RoundToInt(item.itemCost); // Deduct item cost from current money
+            UpdateMoneyText(); // Update money text after deduction
+            AddItemToInventory(item); // Add item to inventory
             return true; // Return true if the purchase was successful
         }
         else
@@ -52,7 +64,6 @@ public class MoneyManager : MonoBehaviour
             return false; // Return false if the player doesn't have enough money
         }
     }
-
 
     // Method to add money when selling an item
     public void Sell(float amount)
@@ -71,24 +82,25 @@ public class MoneyManager : MonoBehaviour
     }
 
     // Method to add item to inventory
-    public void AddItemToInventory(string itemName)
+    public void AddItemToInventory(ShopItem item)
     {
-        if (inventory.ContainsKey(itemName))
-        {
-            inventory[itemName]++;
-        }
-        else
-        {
-            inventory[itemName] = 1;
-        }
-    }
+        // Instantiate the item icon UI sprite
+        GameObject itemIcon = new GameObject(item.itemName);
+        itemIcon.AddComponent<SpriteRenderer>().sprite = item.itemIcon;
 
-    // Method to remove item from inventory
-    public void RemoveItemFromInventory(string itemName)
-    {
-        if (inventory.ContainsKey(itemName) && inventory[itemName] > 0)
+        // Adjust the scale of the item icon
+        itemIcon.transform.localScale = Vector3.one * 0.5f; // Adjust scale as needed
+
+        // Find an empty slot in the backpack panel
+        foreach (Transform slot in backpackPanel)
         {
-            inventory[itemName]--;
+            if (slot.childCount == 0) // Check if the slot is empty
+            {
+                // Set the parent of the item icon to the empty slot
+                itemIcon.transform.SetParent(slot);
+                itemIcon.transform.localPosition = Vector3.zero; // Center the item icon within the slot
+                break; // Exit the loop after placing the item
+            }
         }
     }
 }
