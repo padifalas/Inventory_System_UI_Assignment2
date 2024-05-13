@@ -8,7 +8,7 @@ using TMPro;
 public class ShopItem
 {
     public string itemName; // Name of the item
-    public Sprite itemIcon; // UI icon for the item
+    public GameObject itemIcon; // UI icon for the item
     public int itemCost; // Cost of the item
     public int sellPrice; 
 }
@@ -54,7 +54,7 @@ public class MoneyManager : MonoBehaviour
     {
         if (currentMoney >= item.itemCost)
         {
-            currentMoney -= Mathf.RoundToInt(item.itemCost); // Deduct item cost from current money
+            currentMoney -= item.itemCost; // Deduct item cost from current money
             UpdateMoneyText(); // Update money text after deduction
             AddItemToInventory(item); // Add item to inventory
             return true; // Return true if the purchase was successful
@@ -66,25 +66,27 @@ public class MoneyManager : MonoBehaviour
         }
     }
     
+    // Method to add money when selling an item
     public void SellItem(ShopItem item)
     {
-        currentMoney += Mathf.RoundToInt(item.sellPrice); // Add sell price to current money
-        UpdateMoneyText(); // Update money text after selling item
+        if (currentMoney >= item.sellPrice)
+        {
+            currentMoney += item.sellPrice; // Add sell price to current money
+            UpdateMoneyText(); // Update money text after selling item
 
-        // Remove item from backpack (implement this based on your backpack UI logic)
-        RemoveItemFromBackpack(item);
-        Debug.Log(item.itemName + " Was sold  for " + item.sellPrice);
+            // Remove item from backpack (implement this based on your backpack UI logic)
+            RemoveItemFromBackpack(item);
+            Debug.Log(item.itemName + " was sold for $" + item.sellPrice);
+        }
+        else
+        {
+            Debug.Log("Insufficient funds to sell " + item.itemName);
+        }
     }
 
 
-    // Method to add money when selling an item
-    public void Sell(float amount)
-    {
-        currentMoney += Mathf.RoundToInt(amount);
-        UpdateMoneyText(); // Update money text after adding money
-        
-        Debug.Log("ITEM SOLD");
-    }
+
+  
 
     // Method to update money text in the UI
     public void UpdateMoneyText()
@@ -96,27 +98,25 @@ public class MoneyManager : MonoBehaviour
     }
 
     // Method to add item to inventory
+    // Method to add item to inventory
     public void AddItemToInventory(ShopItem item)
     {
-        // Instantiate the item icon UI sprite
-        GameObject itemIcon = new GameObject(item.itemName);
-        itemIcon.AddComponent<SpriteRenderer>().sprite = item.itemIcon;
-
-        // Adjust the scale of the item icon
-        itemIcon.transform.localScale = Vector3.one * 0.5f; // Adjust scale as needed
+        // Instantiate the item prefab
+        GameObject itemInstance = Instantiate(item.itemIcon);
 
         // Find an empty slot in the backpack panel
         foreach (Transform slot in backpackPanel)
         {
             if (slot.childCount == 0) // Check if the slot is empty
             {
-                // Set the parent of the item icon to the empty slot
-                itemIcon.transform.SetParent(slot);
-                itemIcon.transform.localPosition = Vector3.zero; // Center the item icon within the slot
+                // Set the parent of the item prefab to the empty slot
+                itemInstance.transform.SetParent(slot);
+                itemInstance.transform.localPosition = Vector3.zero; // Center the item within the slot
                 break; // Exit the loop after placing the item
             }
         }
     }
+
     
     // Method to remove item from backpack
     private void RemoveItemFromBackpack(ShopItem item)
