@@ -156,6 +156,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1813711899}
+  - {fileID: 389925693}
   m_Father: {fileID: 316565171}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -208,8 +209,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 111455001}
-        m_TargetAssemblyTypeName: BuyItem, Assembly-CSharp
-        m_MethodName: BuyShield
+        m_TargetAssemblyTypeName: BuyButton, Assembly-CSharp
+        m_MethodName: BuyItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -264,26 +265,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111454996}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c84e5c82129be3e46abb31d36de8e240, type: 3}
+  m_Script: {fileID: 11500000, guid: de7c89afc44a5d74ab9c61a0d12fdaed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moneyManager: {fileID: 1683975086}
-  itemType: 9
-  itemIconPrefab: {fileID: 886563505}
-  backpackPanel: {fileID: 801010159}
-  itemCost: 35
-  Hammer: {fileID: 0}
-  Gun: {fileID: 0}
-  Armour: {fileID: 0}
-  Boots: {fileID: 0}
-  Gloves: {fileID: 0}
-  BowArrow: {fileID: 0}
-  GreenPotion: {fileID: 0}
-  Lantern: {fileID: 0}
-  TNT: {fileID: 0}
-  Shield: {fileID: 0}
+  item:
+    itemName: Shield
+    itemIcon: {fileID: 886563505}
+    itemCost: 55
+    sellPrice: 49
 --- !u!1 &150785334
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,7 +540,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BUY
+  m_text: BUY $4
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -575,8 +567,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1330,6 +1322,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 355162129}
   m_CullTransparentMesh: 1
+--- !u!1 &389925692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 389925693}
+  - component: {fileID: 389925694}
+  m_Layer: 0
+  m_Name: BUY BUTTON
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &389925693
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389925692}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 496.38812, y: 227.2368, z: -7833.975}
+  m_LocalScale: {x: 87.02281, y: 87.02281, z: 87.02281}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 111454997}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &389925694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389925692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29c158820982a1d4aa3878daf9a175b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoneyManager: {fileID: 950915308}
+  Slots:
+  - {fileID: 1202435440}
+  - {fileID: 1817237929}
+  - {fileID: 830582145}
+  - {fileID: 1369767779}
+  - {fileID: 1933253780}
+  - {fileID: 1130976293}
+  - {fileID: 413048590}
+  - {fileID: 1833519662}
+  backpackPanel: {fileID: 801010159}
+  sizes: {x: 70, y: 70, z: 0}
+  Hammer: {fileID: 4593091980766619464, guid: fe125453554c74c4887643342b0e880a, type: 3}
+  Gun: {fileID: 1061661157569515151, guid: 54e93f2920d0ddd4aa792e6ce2ac53a6, type: 3}
+  Armour: {fileID: 4722172182354852388, guid: 4b826208ab92cdb4c8cc699de9afe53c, type: 3}
+  Boots: {fileID: 1506094611310210178, guid: 032554e5d161a994cbb78bd353df72e3, type: 3}
+  Gloves: {fileID: 3538547491383785390, guid: f51913b754a8c6a4a9a6a8d27914f3d6, type: 3}
+  BowArrow: {fileID: 5487066310600236512, guid: 12d4ca261b400894d9381b6a0a31ef33, type: 3}
+  GreenPotion: {fileID: 1061661157569515151, guid: 54e93f2920d0ddd4aa792e6ce2ac53a6, type: 3}
+  Lantern: {fileID: 4437758558426121846, guid: 60f710d2a4d7d1f428bb73ec65e5540e, type: 3}
+  TNT: {fileID: 1618124602435954706, guid: 75bc0a2ee790b964cac4685a42cb48c5, type: 3}
+  Shield: {fileID: 6678470115600702230, guid: 75d2d566e878ad04780662702a8d4bfa, type: 3}
 --- !u!1 &413048589
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,8 +1558,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 414069057}
-        m_TargetAssemblyTypeName: BuyItem, Assembly-CSharp
-        m_MethodName: BuyBowArrow
+        m_TargetAssemblyTypeName: BuyButton, Assembly-CSharp
+        m_MethodName: BuyItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1558,24 +1616,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 414069052}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c84e5c82129be3e46abb31d36de8e240, type: 3}
+  m_Script: {fileID: 11500000, guid: de7c89afc44a5d74ab9c61a0d12fdaed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moneyManager: {fileID: 1683975086}
-  itemType: 5
-  itemIconPrefab: {fileID: 1545457666}
-  backpackPanel: {fileID: 801010159}
-  itemCost: 11
-  Hammer: {fileID: 0}
-  Gun: {fileID: 0}
-  Armour: {fileID: 0}
-  Boots: {fileID: 0}
-  Gloves: {fileID: 0}
-  BowArrow: {fileID: 0}
-  GreenPotion: {fileID: 0}
-  Lantern: {fileID: 0}
-  TNT: {fileID: 0}
-  Shield: {fileID: 0}
+  item:
+    itemName: BowArrow
+    itemIcon: {fileID: 1545457666}
+    itemCost: 14
+    sellPrice: 11
 --- !u!1 &427158309
 GameObject:
   m_ObjectHideFlags: 0
@@ -2043,6 +2092,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1910990166715431213, guid: fe125453554c74c4887643342b0e880a, type: 3}
   m_PrefabInstance: {fileID: 6516638941620584587}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &653115823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 653115824}
+  m_Layer: 0
+  m_Name: Backpack Box
+  m_TagString: Untagged
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &653115824
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653115823}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0146247605}
+  m_LocalScale: {x: 0, y: 0, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 4.03, y: -6.02}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &668363157
 GameObject:
   m_ObjectHideFlags: 0
@@ -2600,7 +2684,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -3039,7 +3123,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BUY
+  m_text: BUY $15
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3066,8 +3150,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3201,8 +3285,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 911887912}
-        m_TargetAssemblyTypeName: BuyItem, Assembly-CSharp
-        m_MethodName: BuyBoots
+        m_TargetAssemblyTypeName: BuyButton, Assembly-CSharp
+        m_MethodName: BuyItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3259,24 +3343,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 911887907}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c84e5c82129be3e46abb31d36de8e240, type: 3}
+  m_Script: {fileID: 11500000, guid: de7c89afc44a5d74ab9c61a0d12fdaed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moneyManager: {fileID: 1683975086}
-  itemType: 3
-  itemIconPrefab: {fileID: 1729156186}
-  backpackPanel: {fileID: 801010159}
-  itemCost: 18
-  Hammer: {fileID: 554580055}
-  Gun: {fileID: 442001618}
-  Armour: {fileID: 329349089}
-  Boots: {fileID: 1729156186}
-  Gloves: {fileID: 828457357}
-  BowArrow: {fileID: 1545457666}
-  GreenPotion: {fileID: 1473536547}
-  Lantern: {fileID: 1556171983}
-  TNT: {fileID: 545891095}
-  Shield: {fileID: 886563505}
+  item:
+    itemName: Boots
+    itemIcon: {fileID: 1729156186}
+    itemCost: 12
+    sellPrice: 9
 --- !u!1 &919066325
 GameObject:
   m_ObjectHideFlags: 0
@@ -3411,6 +3486,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919066325}
   m_CullTransparentMesh: 1
+--- !u!1 &921450501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 921450502}
+  - component: {fileID: 921450503}
+  m_Layer: 0
+  m_Name: BUY BUTTON
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &921450502
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921450501}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.1103973, y: 1.3974587, z: -0.022088462}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &921450503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921450501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29c158820982a1d4aa3878daf9a175b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoneyManager: {fileID: 950915308}
+  Slots:
+  - {fileID: 1202435440}
+  - {fileID: 1817237929}
+  - {fileID: 830582145}
+  - {fileID: 1369767779}
+  - {fileID: 1933253780}
+  - {fileID: 1130976293}
+  - {fileID: 413048590}
+  - {fileID: 1833519662}
+  backpackPanel: {fileID: 801010159}
+  sizes: {x: 70, y: 70, z: 0}
+  Hammer: {fileID: 554580055}
+  Gun: {fileID: 442001618}
+  Armour: {fileID: 329349089}
+  Boots: {fileID: 1729156186}
+  Gloves: {fileID: 828457357}
+  BowArrow: {fileID: 1545457666}
+  GreenPotion: {fileID: 1473536547}
+  Lantern: {fileID: 1556171983}
+  TNT: {fileID: 545891095}
+  Shield: {fileID: 886563505}
 --- !u!1 &947197743
 GameObject:
   m_ObjectHideFlags: 0
@@ -3532,6 +3673,153 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 947197743}
   m_CullTransparentMesh: 1
+--- !u!1 &950915307
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 950915312}
+  - component: {fileID: 950915311}
+  - component: {fileID: 950915310}
+  - component: {fileID: 950915309}
+  - component: {fileID: 950915308}
+  m_Layer: 5
+  m_Name: MONEY_MANAGERR
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &950915308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950915307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82ec9810e445fa84cbc7c11396f55ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingAmount: 100
+  currentMoney: 0
+  moneyText: {fileID: 2080277536}
+  HammerPrice: 4
+  GunPrice: 7
+  ArmourPrice: 15
+  BootsPrice: 5
+  GlovesPrice: 10
+  BowArrowPrice: 5
+  PotionPrice: 20
+  LanternPrice: 15
+  TNTPrice: 20
+  ShieldPrice: 50
+  boxAboveButton: {fileID: 0}
+--- !u!114 &950915309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950915307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 950915310}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &950915310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950915307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &950915311
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950915307}
+  m_CullTransparentMesh: 1
+--- !u!224 &950915312
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950915307}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 17.641, y: -9.06}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &970398721
 GameObject:
   m_ObjectHideFlags: 0
@@ -3673,7 +3961,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BUY
+  m_text: BUY $7
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3700,8 +3988,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4000,12 +4288,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1089608910}
-        m_TargetAssemblyTypeName: BuyItem, Assembly-CSharp
-        m_MethodName: BuyArmour
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4058,24 +4346,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1089608905}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c84e5c82129be3e46abb31d36de8e240, type: 3}
+  m_Script: {fileID: 11500000, guid: de7c89afc44a5d74ab9c61a0d12fdaed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moneyManager: {fileID: 1683975086}
-  itemType: 2
-  itemIconPrefab: {fileID: 329349089}
-  backpackPanel: {fileID: 801010159}
-  itemCost: 15
-  Hammer: {fileID: 554580055}
-  Gun: {fileID: 442001618}
-  Armour: {fileID: 329349089}
-  Boots: {fileID: 1729156186}
-  Gloves: {fileID: 828457357}
-  BowArrow: {fileID: 0}
-  GreenPotion: {fileID: 0}
-  Lantern: {fileID: 0}
-  TNT: {fileID: 0}
-  Shield: {fileID: 0}
+  item:
+    itemName: Armour
+    itemIcon: {fileID: 329349089}
+    itemCost: 15
+    sellPrice: 9
 --- !u!1 &1093576149
 GameObject:
   m_ObjectHideFlags: 0
@@ -4552,8 +4831,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1148776635}
-        m_TargetAssemblyTypeName: BuyItem, Assembly-CSharp
-        m_MethodName: BuyGreenPotion
+        m_TargetAssemblyTypeName: BuyButton, Assembly-CSharp
+        m_MethodName: BuyItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4610,24 +4889,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1148776630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c84e5c82129be3e46abb31d36de8e240, type: 3}
+  m_Script: {fileID: 11500000, guid: de7c89afc44a5d74ab9c61a0d12fdaed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moneyManager: {fileID: 1683975086}
-  itemType: 6
-  itemIconPrefab: {fileID: 1473536547}
-  backpackPanel: {fileID: 801010159}
-  itemCost: 9
-  Hammer: {fileID: 0}
-  Gun: {fileID: 0}
-  Armour: {fileID: 0}
-  Boots: {fileID: 0}
-  Gloves: {fileID: 0}
-  BowArrow: {fileID: 0}
-  GreenPotion: {fileID: 0}
-  Lantern: {fileID: 0}
-  TNT: {fileID: 0}
-  Shield: {fileID: 0}
+  item:
+    itemName: Green Potion
+    itemIcon: {fileID: 1473536547}
+    itemCost: 9
+    sellPrice: 7
 --- !u!1 &1189229148
 GameObject:
   m_ObjectHideFlags: 0
@@ -5218,8 +5488,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1291265189}
-        m_TargetAssemblyTypeName: BuyItem, Assembly-CSharp
-        m_MethodName: BuyGloves
+        m_TargetAssemblyTypeName: BuyButton, Assembly-CSharp
+        m_MethodName: BuyItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5276,24 +5546,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1291265184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c84e5c82129be3e46abb31d36de8e240, type: 3}
+  m_Script: {fileID: 11500000, guid: de7c89afc44a5d74ab9c61a0d12fdaed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moneyManager: {fileID: 1683975086}
-  itemType: 4
-  itemIconPrefab: {fileID: 828457357}
-  backpackPanel: {fileID: 801010159}
-  itemCost: 6
-  Hammer: {fileID: 554580055}
-  Gun: {fileID: 0}
-  Armour: {fileID: 0}
-  Boots: {fileID: 0}
-  Gloves: {fileID: 828457357}
-  BowArrow: {fileID: 0}
-  GreenPotion: {fileID: 0}
-  Lantern: {fileID: 0}
-  TNT: {fileID: 0}
-  Shield: {fileID: 0}
+  item:
+    itemName: Gloves
+    itemIcon: {fileID: 828457357}
+    itemCost: 7
+    sellPrice: 5
 --- !u!1 &1291769924
 GameObject:
   m_ObjectHideFlags: 0
@@ -5512,8 +5773,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1310401593}
-        m_TargetAssemblyTypeName: BuyItem, Assembly-CSharp
-        m_MethodName: BuyLantern
+        m_TargetAssemblyTypeName: BuyButton, Assembly-CSharp
+        m_MethodName: BuyItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5570,24 +5831,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1310401588}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c84e5c82129be3e46abb31d36de8e240, type: 3}
+  m_Script: {fileID: 11500000, guid: de7c89afc44a5d74ab9c61a0d12fdaed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moneyManager: {fileID: 1683975086}
-  itemType: 7
-  itemIconPrefab: {fileID: 1556171983}
-  backpackPanel: {fileID: 801010159}
-  itemCost: 8
-  Hammer: {fileID: 0}
-  Gun: {fileID: 0}
-  Armour: {fileID: 0}
-  Boots: {fileID: 0}
-  Gloves: {fileID: 0}
-  BowArrow: {fileID: 0}
-  GreenPotion: {fileID: 0}
-  Lantern: {fileID: 0}
-  TNT: {fileID: 0}
-  Shield: {fileID: 0}
+  item:
+    itemName: Lantern
+    itemIcon: {fileID: 1556171983}
+    itemCost: 6
+    sellPrice: 6
 --- !u!1 &1334415527
 GameObject:
   m_ObjectHideFlags: 0
@@ -6160,8 +6412,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1405678886}
-        m_TargetAssemblyTypeName: BuyButton, Assembly-CSharp
-        m_MethodName: BuyItem
+        m_TargetAssemblyTypeName: BuyButtonn, Assembly-CSharp
+        m_MethodName: Buy1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6218,15 +6470,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 1405678881}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de7c89afc44a5d74ab9c61a0d12fdaed, type: 3}
+  m_Script: {fileID: 11500000, guid: 29c158820982a1d4aa3878daf9a175b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyManager: {fileID: 1683975086}
-  item:
-    itemName: Hammer
-    itemIcon: {fileID: 554580055}
-    itemCost: 5
-    sellPrice: 4
+  MoneyManager: {fileID: 950915308}
+  Slots:
+  - {fileID: 1202435440}
+  - {fileID: 1817237929}
+  - {fileID: 830582145}
+  - {fileID: 1369767779}
+  - {fileID: 1933253780}
+  - {fileID: 1130976293}
+  - {fileID: 413048590}
+  - {fileID: 1833519662}
+  backpackPanel: {fileID: 0}
+  sizes: {x: 70, y: 70, z: 0}
+  Hammer: {fileID: 554580055}
+  Gun: {fileID: 442001618}
+  Armour: {fileID: 329349089}
+  Boots: {fileID: 1729156186}
+  Gloves: {fileID: 828457357}
+  BowArrow: {fileID: 1545457666}
+  GreenPotion: {fileID: 1473536547}
+  Lantern: {fileID: 1556171983}
+  TNT: {fileID: 545891095}
+  Shield: {fileID: 886563505}
 --- !u!1 &1437820207
 GameObject:
   m_ObjectHideFlags: 0
@@ -6242,7 +6510,7 @@ GameObject:
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1437820208
 Transform:
   m_ObjectHideFlags: 0
@@ -6624,7 +6892,7 @@ MonoBehaviour:
   moneyManager: {fileID: 1683975086}
   item:
     itemName: Hammer
-    itemIcon: {fileID: 0}
+    itemIcon: {fileID: 554580055}
     itemCost: 5
     sellPrice: 4
 --- !u!1 &1493922404
@@ -6712,8 +6980,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1493922409}
-        m_TargetAssemblyTypeName: BuyItem, Assembly-CSharp
-        m_MethodName: BuyTNT
+        m_TargetAssemblyTypeName: BuyButton, Assembly-CSharp
+        m_MethodName: BuyItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6770,55 +7038,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1493922404}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c84e5c82129be3e46abb31d36de8e240, type: 3}
+  m_Script: {fileID: 11500000, guid: de7c89afc44a5d74ab9c61a0d12fdaed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moneyManager: {fileID: 1683975086}
-  itemType: 8
-  itemIconPrefab: {fileID: 545891095}
-  backpackPanel: {fileID: 801010159}
-  itemCost: 7
-  Hammer: {fileID: 0}
-  Gun: {fileID: 0}
-  Armour: {fileID: 0}
-  Boots: {fileID: 0}
-  Gloves: {fileID: 0}
-  BowArrow: {fileID: 0}
-  GreenPotion: {fileID: 0}
-  Lantern: {fileID: 0}
-  TNT: {fileID: 0}
-  Shield: {fileID: 0}
---- !u!1 &1508766214
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1508766215}
-  m_Layer: 0
-  m_Name: BUY BUTTON
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1508766215
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1508766214}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.1113343, y: 1.7593569, z: -0.007294228}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  item:
+    itemName: Lantern
+    itemIcon: {fileID: 545891095}
+    itemCost: 9
+    sellPrice: 7
 --- !u!1 &1523920824
 GameObject:
   m_ObjectHideFlags: 0
@@ -6988,7 +7216,6 @@ GameObject:
   - component: {fileID: 1590337568}
   - component: {fileID: 1590337567}
   - component: {fileID: 1590337570}
-  - component: {fileID: 1590337571}
   m_Layer: 5
   m_Name: BuyBtn (1)
   m_TagString: Untagged
@@ -7060,20 +7287,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BuyGun, Assembly-CSharp
-        m_MethodName: BuyItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1590337571}
-        m_TargetAssemblyTypeName: BuyGun, Assembly-CSharp
+      - m_Target: {fileID: 1590337570}
+        m_TargetAssemblyTypeName: BuyButton, Assembly-CSharp
         m_MethodName: BuyItem
         m_Mode: 1
         m_Arguments:
@@ -7129,43 +7344,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590337565}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c84e5c82129be3e46abb31d36de8e240, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moneyManager: {fileID: 0}
-  itemType: 1
-  itemIconPrefab: {fileID: 442001618}
-  backpackPanel: {fileID: 801010159}
-  itemCost: 4.99
-  Hammer: {fileID: 0}
-  Gun: {fileID: 0}
-  Armour: {fileID: 0}
-  Boots: {fileID: 0}
-  Gloves: {fileID: 0}
-  BowArrow: {fileID: 0}
-  GreenPotion: {fileID: 0}
-  Lantern: {fileID: 0}
-  TNT: {fileID: 0}
-  Shield: {fileID: 0}
---- !u!114 &1590337571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590337565}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7036b515d0b7c0148be029cd5fcdd6db, type: 3}
+  m_Script: {fileID: 11500000, guid: de7c89afc44a5d74ab9c61a0d12fdaed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moneyManager: {fileID: 1683975086}
-  itemName: Gun
-  itemIconPrefab: {fileID: 442001618}
-  backpackPanel: {fileID: 801010159}
-  itemCost: 8
+  item:
+    itemName: Gun
+    itemIcon: {fileID: 442001618}
+    itemCost: 7
+    sellPrice: 5
 --- !u!1 &1595188012
 GameObject:
   m_ObjectHideFlags: 0
@@ -7536,7 +7725,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1683975082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10222,6 +10411,8 @@ SceneRoots:
   - {fileID: 1964621842}
   - {fileID: 1268847052}
   - {fileID: 1683975085}
+  - {fileID: 950915312}
   - {fileID: 668363159}
   - {fileID: 1437820208}
-  - {fileID: 1508766215}
+  - {fileID: 921450502}
+  - {fileID: 653115824}

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
 // Define a structure to hold information about each shop item
 [System.Serializable]
 public class ShopItem
@@ -102,6 +101,7 @@ public class MoneyManager : MonoBehaviour
     public void AddItemToInventory(ShopItem item)
     {
         // Instantiate the item prefab
+        
         GameObject itemInstance = Instantiate(item.itemIcon);
 
         // Find an empty slot in the backpack panel
