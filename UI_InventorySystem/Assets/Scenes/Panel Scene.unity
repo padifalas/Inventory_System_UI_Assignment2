@@ -156,7 +156,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1813711899}
-  - {fileID: 389925693}
   m_Father: {fileID: 316565171}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -272,7 +271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyManager: {fileID: 950915308}
   currentMoney: 0
-  bagManager: {fileID: 551264546}
+  BackpackManager: {fileID: 551264546}
   Hammer: {fileID: 554580055}
   Gun: {fileID: 442001618}
   Armour: {fileID: 329349089}
@@ -283,7 +282,7 @@ MonoBehaviour:
   Lantern: {fileID: 1556171983}
   TNT: {fileID: 545891095}
   Shield: {fileID: 886563505}
-  StorageSlotArea: {fileID: 421471317}
+  BackpackBox: {fileID: 421471317}
 --- !u!1 &150785334
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,7 +547,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BUY $4
+  m_text: 'BUY $20
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -682,7 +683,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BUY
+  m_text: ' BUY $16'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -709,8 +710,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -879,6 +880,140 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 262708939}
+  m_CullTransparentMesh: 1
+--- !u!1 &294693624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 294693625}
+  - component: {fileID: 294693627}
+  - component: {fileID: 294693626}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &294693625
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294693624}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1764418404}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &294693626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294693624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: REORGANIZE
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 20
+  m_fontSizeBase: 20
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &294693627
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294693624}
   m_CullTransparentMesh: 1
 --- !u!1 &308127667
 GameObject:
@@ -1096,7 +1231,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 351, y: 20}
+  m_AnchoredPosition: {x: 351, y: 55}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &355162131
@@ -1196,64 +1331,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 355162129}
   m_CullTransparentMesh: 1
---- !u!1 &389925692
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 389925693}
-  - component: {fileID: 389925694}
-  m_Layer: 0
-  m_Name: BUY BUTTON
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &389925693
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 389925692}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 496.38812, y: 227.2368, z: -7833.975}
-  m_LocalScale: {x: 87.02281, y: 87.02281, z: 87.02281}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 111454997}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &389925694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 389925692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29c158820982a1d4aa3878daf9a175b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moneyManager: {fileID: 0}
-  currentMoney: 0
-  bagManager: {fileID: 0}
-  Hammer: {fileID: 4593091980766619464, guid: fe125453554c74c4887643342b0e880a, type: 3}
-  Gun: {fileID: 1061661157569515151, guid: 54e93f2920d0ddd4aa792e6ce2ac53a6, type: 3}
-  Armour: {fileID: 4722172182354852388, guid: 4b826208ab92cdb4c8cc699de9afe53c, type: 3}
-  Boots: {fileID: 1506094611310210178, guid: 032554e5d161a994cbb78bd353df72e3, type: 3}
-  Gloves: {fileID: 3538547491383785390, guid: f51913b754a8c6a4a9a6a8d27914f3d6, type: 3}
-  BowArrow: {fileID: 5487066310600236512, guid: 12d4ca261b400894d9381b6a0a31ef33, type: 3}
-  Potion: {fileID: 0}
-  Lantern: {fileID: 4437758558426121846, guid: 60f710d2a4d7d1f428bb73ec65e5540e, type: 3}
-  TNT: {fileID: 1618124602435954706, guid: 75bc0a2ee790b964cac4685a42cb48c5, type: 3}
-  Shield: {fileID: 6678470115600702230, guid: 75d2d566e878ad04780662702a8d4bfa, type: 3}
-  StorageSlotArea: {fileID: 0}
 --- !u!1 &413048589
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,12 +1501,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 414069058}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+        m_TargetAssemblyTypeName: BuyButtonn, Assembly-CSharp
+        m_MethodName: BuyBowArrow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1487,7 +1564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyManager: {fileID: 950915308}
   currentMoney: 0
-  bagManager: {fileID: 551264546}
+  BackpackManager: {fileID: 551264546}
   Hammer: {fileID: 554580055}
   Gun: {fileID: 442001618}
   Armour: {fileID: 329349089}
@@ -1498,7 +1575,7 @@ MonoBehaviour:
   Lantern: {fileID: 1556171983}
   TNT: {fileID: 545891095}
   Shield: {fileID: 886563505}
-  StorageSlotArea: {fileID: 421471317}
+  BackpackBox: {fileID: 421471317}
 --- !u!1 &421471315
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,6 +2013,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 490792816}
   m_CullTransparentMesh: 1
+--- !u!1 &504318769
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 504318771}
+  - component: {fileID: 504318770}
+  m_Layer: 0
+  m_Name: REORGANIZE
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &504318770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504318769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f88ccba3485a504d9b687cf181ba21c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backpackManager: {fileID: 551264546}
+  itemSlots:
+  - {fileID: 554580055}
+  - {fileID: 442001618}
+  - {fileID: 329349089}
+  - {fileID: 1729156186}
+  - {fileID: 828457357}
+  - {fileID: 1545457666}
+  - {fileID: 1473536547}
+  - {fileID: 1556171983}
+  - {fileID: 545891095}
+  - {fileID: 886563505}
+--- !u!4 &504318771
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504318769}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.2372365, y: 0.43301454, z: 1034.1206}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2078,6 +2211,7 @@ MonoBehaviour:
   - {fileID: 1130976292}
   - {fileID: 413048589}
   - {fileID: 1833519661}
+  slotAvailability: 
 --- !u!4 &551264547
 Transform:
   m_ObjectHideFlags: 0
@@ -2132,7 +2266,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -3008,6 +3142,7 @@ RectTransform:
   - {fileID: 1130976293}
   - {fileID: 413048590}
   - {fileID: 1833519662}
+  - {fileID: 1764418404}
   m_Father: {fileID: 1923288911}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3670,7 +3805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyManager: {fileID: 950915308}
   currentMoney: 0
-  bagManager: {fileID: 551264546}
+  BackpackManager: {fileID: 551264546}
   Hammer: {fileID: 554580055}
   Gun: {fileID: 442001618}
   Armour: {fileID: 329349089}
@@ -3681,7 +3816,7 @@ MonoBehaviour:
   Lantern: {fileID: 1556171983}
   TNT: {fileID: 545891095}
   Shield: {fileID: 886563505}
-  StorageSlotArea: {fileID: 421471317}
+  BackpackBox: {fileID: 421471317}
 --- !u!1 &919066325
 GameObject:
   m_ObjectHideFlags: 0
@@ -3739,7 +3874,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BUY
+  m_text: 'BUY $12
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3766,8 +3903,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3972,16 +4109,28 @@ MonoBehaviour:
   TotalMoney: 100
   currentMoney: 0
   moneyText: {fileID: 2080277536}
-  HammerPrice: 4
-  GunPrice: 7
+  HammerPrice: 20
+  GunPrice: 15
   ArmourPrice: 15
-  BootsPrice: 5
-  GlovesPrice: 10
-  BowArrowPrice: 5
-  PotionPrice: 20
-  LanternPrice: 15
-  TNTPrice: 20
-  ShieldPrice: 50
+  BootsPrice: 10
+  GlovesPrice: 12
+  BowArrowPrice: 16
+  PotionPrice: 11
+  LanternPrice: 9
+  TNTPrice: 12
+  ShieldPrice: 45
+  HammerSellPrice: 10
+  GunSellPrice: 5
+  ArmourSellPrice: 15
+  BootsSellPrice: 5
+  GlovesSellPrice: 10
+  BowArrowSellPrice: 5
+  PotionSellPrice: 20
+  LanternSellPrice: 15
+  TNTSellPrice: 20
+  ShieldSellPrice: 50
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  noMoneyColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &950915309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4161,7 +4310,7 @@ Transform:
   m_GameObject: {fileID: 970398721}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 160.99998, y: 256, z: -8706.879}
+  m_LocalPosition: {x: 160.99998, y: 264, z: -8706.879}
   m_LocalScale: {x: 18.297153, y: 10.842914, z: 96.7431}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4224,7 +4373,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BUY $7
+  m_text: BUY $15
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4614,7 +4763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyManager: {fileID: 950915308}
   currentMoney: 0
-  bagManager: {fileID: 551264546}
+  BackpackManager: {fileID: 551264546}
   Hammer: {fileID: 554580055}
   Gun: {fileID: 442001618}
   Armour: {fileID: 329349089}
@@ -4625,7 +4774,7 @@ MonoBehaviour:
   Lantern: {fileID: 1556171983}
   TNT: {fileID: 545891095}
   Shield: {fileID: 886563505}
-  StorageSlotArea: {fileID: 421471317}
+  BackpackBox: {fileID: 421471317}
 --- !u!1 &1093576149
 GameObject:
   m_ObjectHideFlags: 0
@@ -4793,7 +4942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyManager: {fileID: 950915308}
   currentMoney: 0
-  bagManager: {fileID: 551264546}
+  BackpackManager: {fileID: 551264546}
   Hammer: {fileID: 554580055}
   Gun: {fileID: 442001618}
   Armour: {fileID: 329349089}
@@ -4804,7 +4953,7 @@ MonoBehaviour:
   Lantern: {fileID: 1556171983}
   TNT: {fileID: 545891095}
   Shield: {fileID: 886563505}
-  StorageSlotArea: {fileID: 421471317}
+  BackpackBox: {fileID: 421471317}
 --- !u!4 &1107340284
 Transform:
   m_ObjectHideFlags: 0
@@ -5223,7 +5372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyManager: {fileID: 950915308}
   currentMoney: 0
-  bagManager: {fileID: 551264546}
+  BackpackManager: {fileID: 551264546}
   Hammer: {fileID: 554580055}
   Gun: {fileID: 442001618}
   Armour: {fileID: 329349089}
@@ -5234,7 +5383,7 @@ MonoBehaviour:
   Lantern: {fileID: 1556171983}
   TNT: {fileID: 545891095}
   Shield: {fileID: 886563505}
-  StorageSlotArea: {fileID: 421471317}
+  BackpackBox: {fileID: 421471317}
 --- !u!1 &1189229148
 GameObject:
   m_ObjectHideFlags: 0
@@ -5292,7 +5441,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BUY
+  m_text: BUY $11
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5319,8 +5468,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5888,7 +6037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyManager: {fileID: 950915308}
   currentMoney: 0
-  bagManager: {fileID: 551264546}
+  BackpackManager: {fileID: 551264546}
   Hammer: {fileID: 554580055}
   Gun: {fileID: 442001618}
   Armour: {fileID: 329349089}
@@ -5899,7 +6048,7 @@ MonoBehaviour:
   Lantern: {fileID: 1556171983}
   TNT: {fileID: 545891095}
   Shield: {fileID: 886563505}
-  StorageSlotArea: {fileID: 421471317}
+  BackpackBox: {fileID: 421471317}
 --- !u!1 &1291769924
 GameObject:
   m_ObjectHideFlags: 0
@@ -6181,7 +6330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyManager: {fileID: 950915308}
   currentMoney: 0
-  bagManager: {fileID: 551264546}
+  BackpackManager: {fileID: 551264546}
   Hammer: {fileID: 554580055}
   Gun: {fileID: 442001618}
   Armour: {fileID: 329349089}
@@ -6192,7 +6341,7 @@ MonoBehaviour:
   Lantern: {fileID: 1556171983}
   TNT: {fileID: 545891095}
   Shield: {fileID: 886563505}
-  StorageSlotArea: {fileID: 421471317}
+  BackpackBox: {fileID: 421471317}
 --- !u!1 &1334415527
 GameObject:
   m_ObjectHideFlags: 0
@@ -6250,7 +6399,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BUY
+  m_text: ' BUY $12'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6277,8 +6426,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6828,7 +6977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyManager: {fileID: 950915308}
   currentMoney: 0
-  bagManager: {fileID: 551264546}
+  BackpackManager: {fileID: 551264546}
   Hammer: {fileID: 554580055}
   Gun: {fileID: 442001618}
   Armour: {fileID: 329349089}
@@ -6839,7 +6988,7 @@ MonoBehaviour:
   Lantern: {fileID: 1556171983}
   TNT: {fileID: 545891095}
   Shield: {fileID: 886563505}
-  StorageSlotArea: {fileID: 421471317}
+  BackpackBox: {fileID: 421471317}
 --- !u!1 &1437820207
 GameObject:
   m_ObjectHideFlags: 0
@@ -7174,7 +7323,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1475812566}
         m_TargetAssemblyTypeName: SellButton, Assembly-CSharp
-        m_MethodName: SellItem
+        m_MethodName: Sell
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7234,12 +7383,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abad273966b17ea41b15132359aa2f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyManager: {fileID: 1683975086}
-  item:
-    itemName: Hammer
-    itemIcon: {fileID: 554580055}
-    itemCost: 5
-    sellPrice: 4
+  moneyManager: {fileID: 950915308}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  raycastDistance: 1
+  Hammer: {fileID: 554580055}
+  Gun: {fileID: 442001618}
+  Armour: {fileID: 329349089}
+  Boots: {fileID: 1729156186}
+  Gloves: {fileID: 828457357}
+  BowArrow: {fileID: 1545457666}
+  Potion: {fileID: 1473536547}
+  Lantern: {fileID: 1556171983}
+  TNT: {fileID: 545891095}
+  Shield: {fileID: 886563505}
+  HammerPrice: 10
+  GunPrice: 5
+  ArmourPrice: 15
+  BootsPrice: 5
+  GlovesPrice: 10
+  BowArrowPrice: 5
+  PotionPrice: 20
+  LanternPrice: 15
+  TNTPrice: 20
+  ShieldPrice: 50
 --- !u!1 &1493922404
 GameObject:
   m_ObjectHideFlags: 0
@@ -7388,7 +7556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyManager: {fileID: 950915308}
   currentMoney: 0
-  bagManager: {fileID: 551264546}
+  BackpackManager: {fileID: 551264546}
   Hammer: {fileID: 554580055}
   Gun: {fileID: 442001618}
   Armour: {fileID: 329349089}
@@ -7399,7 +7567,7 @@ MonoBehaviour:
   Lantern: {fileID: 1556171983}
   TNT: {fileID: 545891095}
   Shield: {fileID: 886563505}
-  StorageSlotArea: {fileID: 421471317}
+  BackpackBox: {fileID: 421471317}
 --- !u!1 &1545457666 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5487066310600236512, guid: 12d4ca261b400894d9381b6a0a31ef33, type: 3}
@@ -7568,18 +7736,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyManager: {fileID: 950915308}
   currentMoney: 0
-  bagManager: {fileID: 551264546}
-  Hammer: {fileID: 0}
+  BackpackManager: {fileID: 551264546}
+  Hammer: {fileID: 554580055}
   Gun: {fileID: 442001618}
-  Armour: {fileID: 0}
-  Boots: {fileID: 0}
-  Gloves: {fileID: 0}
-  BowArrow: {fileID: 0}
-  Potion: {fileID: 0}
-  Lantern: {fileID: 0}
-  TNT: {fileID: 0}
-  Shield: {fileID: 0}
-  StorageSlotArea: {fileID: 421471317}
+  Armour: {fileID: 329349089}
+  Boots: {fileID: 1729156186}
+  Gloves: {fileID: 828457357}
+  BowArrow: {fileID: 1545457666}
+  Potion: {fileID: 1473536547}
+  Lantern: {fileID: 1556171983}
+  TNT: {fileID: 545891095}
+  Shield: {fileID: 886563505}
+  BackpackBox: {fileID: 421471317}
 --- !u!1 &1595188012
 GameObject:
   m_ObjectHideFlags: 0
@@ -7637,7 +7805,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BUY
+  m_text: BUY $10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7664,8 +7832,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8001,7 +8169,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1015.6999, y: 0}
+  m_AnchoredPosition: {x: -1015.69977, y: 0}
   m_SizeDelta: {x: -2031.4, y: -209.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1757060723
@@ -8041,6 +8209,162 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757060721}
+  m_CullTransparentMesh: 1
+--- !u!1 &1764418403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1764418404}
+  - component: {fileID: 1764418408}
+  - component: {fileID: 1764418407}
+  - component: {fileID: 1764418406}
+  - component: {fileID: 1764418405}
+  m_Layer: 5
+  m_Name: ReorganizeBtn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1764418404
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764418403}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 294693625}
+  m_Father: {fileID: 801010159}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 345.66003, y: 198.20996}
+  m_SizeDelta: {x: 157.25, y: 39.31}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1764418405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764418403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f88ccba3485a504d9b687cf181ba21c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backpackManager: {fileID: 551264546}
+  itemSlots:
+  - {fileID: 1202435439}
+  - {fileID: 1817237928}
+  - {fileID: 830582144}
+  - {fileID: 1369767778}
+  - {fileID: 1933253779}
+  - {fileID: 1130976292}
+  - {fileID: 413048589}
+  - {fileID: 1833519661}
+--- !u!114 &1764418406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764418403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1764418407}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1764418405}
+        m_TargetAssemblyTypeName: Reorganize, Assembly-CSharp
+        m_MethodName: ReorganizeBackpack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1764418407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764418403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 8a842bdbe32f1224da3ab9891074b2ec, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1764418408
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764418403}
   m_CullTransparentMesh: 1
 --- !u!1 &1764656016
 GameObject:
@@ -8233,7 +8557,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BUY
+  m_text: BUY $45
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8260,8 +8584,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8452,7 +8776,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BUY
+  m_text: BUY $9
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8479,8 +8803,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -10379,3 +10703,4 @@ SceneRoots:
   - {fileID: 950915312}
   - {fileID: 1107340284}
   - {fileID: 1268847052}
+  - {fileID: 504318771}

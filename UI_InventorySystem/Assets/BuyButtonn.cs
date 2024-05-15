@@ -7,7 +7,7 @@ public class BuyButtonn : MonoBehaviour
 {
     public Money_Manager moneyManager;
     public int currentMoney;
-    public BagManager bagManager;
+    public BackpackManager BackpackManager;
 
     public GameObject Hammer,
         Gun,
@@ -20,7 +20,7 @@ public class BuyButtonn : MonoBehaviour
         TNT,
         Shield;// Example field for the hammer prefab
 
-    public Transform StorageSlotArea;
+    public Transform BackpackBox;
 
     public void BuyHammer()
     {
@@ -76,7 +76,7 @@ public class BuyButtonn : MonoBehaviour
     {
         if (moneyManager.currentMoney >= price)
         {
-            GameObject CloneLocation = bagManager.WhichSlot();
+            GameObject CloneLocation = BackpackManager.WhichSlot();
             if (CloneLocation != null)
             {
                 moneyManager.currentMoney -= price;
@@ -90,7 +90,7 @@ public class BuyButtonn : MonoBehaviour
         else
         {
             Debug.Log("Not enough money to purchase the item.");
-            // You can display a message to the player indicating insufficient funds
+            
         }
     }
 }
