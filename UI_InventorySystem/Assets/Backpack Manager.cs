@@ -7,7 +7,7 @@ public class BackpackManager : MonoBehaviour
     public List<GameObject> slots = new List<GameObject>();
     public bool[] slotAvailability;
 
-    private void Start()
+    public void Start()
     {
         // Initialize slot availability array
         slotAvailability = new bool[slots.Count];
@@ -39,6 +39,19 @@ public class BackpackManager : MonoBehaviour
         {
             int randomIndex = Random.Range(0, slots.Count);
             (slots[i], slots[randomIndex]) = (slots[randomIndex], slots[i]);
+        }
+    }
+    
+    public void MakeSlotAvailable(GameObject slot)
+    {
+        int index = slots.IndexOf(slot);
+        if (index != -1 && index < slotAvailability.Length)
+        {
+            slotAvailability[index] = true; // Mark slot as available
+        }
+        else
+        {
+            Debug.LogError("Slot not found or index out of range.");
         }
     }
 }

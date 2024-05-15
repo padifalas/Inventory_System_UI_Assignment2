@@ -8,7 +8,17 @@ public class Money_Manager : MonoBehaviour
     public int TotalMoney = 100; // Starting balance
     public int currentMoney;// Current amount of money
     public TextMeshProUGUI moneyText;
-
+   public GameObject Hammer,
+        Gun,
+        Armour,
+        Boots,
+        Gloves,
+        BowArrow,
+        Potion,
+        Lantern,
+        TNT,
+        Shield; 
+    
     public int HammerPrice = 20;
     public int GunPrice = 15;
     public int ArmourPrice = 15;
@@ -20,18 +30,20 @@ public class Money_Manager : MonoBehaviour
     public int TNTPrice = 12;
     public int ShieldPrice = 50; 
     
+ 
+ 
+ private int itemPrice; 
     
-    
-    public int HammerSellPrice = 10;
-    public int GunSellPrice = 5;
+    public int HammerSellPrice=20;
+    public int GunSellPrice = 15;
     public int ArmourSellPrice = 15;
-    public int BootsSellPrice = 5;
-    public int GlovesSellPrice = 10;
-    public int BowArrowSellPrice = 5;
-    public int PotionSellPrice = 20;
-    public int LanternSellPrice = 15;
-    public int TNTSellPrice = 20;
-    public int ShieldSellPrice = 50;
+    public int BootsSellPrice = 10;
+    public int GlovesSellPrice = 12;
+    public int BowArrowSellPrice = 16;
+    public int PotionSellPrice = 11;
+    public int LanternSellPrice = 9;
+    public int TNTSellPrice = 12;
+    public int ShieldSellPrice = 50;  
     
     public Color defaultColor = Color.white;
     public Color noMoneyColor = Color.red;

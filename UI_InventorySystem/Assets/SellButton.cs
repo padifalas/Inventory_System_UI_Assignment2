@@ -1,109 +1,107 @@
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 public class SellButton : MonoBehaviour
 {
-    public Money_Manager moneyManager;
-    public LayerMask layerMask;
-    public float raycastDistance = 3f;
-    
-    
-    public GameObject Hammer,
-        Gun,
-        Armour,
-        Boots,
-        Gloves,
-        BowArrow,
-        Potion,
-        Lantern,
-        TNT,
-        Shield;
+    public float offset = 7;
+    public LayerMask Layer;
 
-    public int HammerPrice = 10;
-    public int GunPrice = 5;
-    public int ArmourPrice = 15;
-    public int BootsPrice = 5;
-    public int GlovesPrice = 10;
-    public int BowArrowPrice = 5;
-    public int PotionPrice = 20;
-    public int LanternPrice = 15;
-    public int TNTPrice = 20;
-    public int ShieldPrice = 50; 
+    public int HammerSellPrice = 20;
+    public int GunSellPrice = 15;
+    public int ArmourSellPrice = 15;
+    public int BootsSellPrice = 10;
+    public int GlovesSellPrice = 12;
+    public int BowArrowSellPrice = 16;
+    public int PotionSellPrice = 11;
+    public int LanternSellPrice = 9;
+    public int TNTSellPrice = 12;
+    public int ShieldSellPrice = 50;
 
-   
-   
-    
-    public void Sell()
+    public Money_Manager Money_Manager; // Reference to the Money_Manager script
+
+    public void Sell(GameObject slot)
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, raycastDistance, layerMask);
 
-        if (hit.collider != null)
+        Destroy(slot.transform.GetChild(1).gameObject);
+
+
+        // Check the name of the item and update money accordingly
+
+        if (slot.transform.GetChild(1).gameObject.name == "Hammer(Clone)")
         {
-            GameObject objectAboveButton = hit.collider.gameObject;
-            Destroy(objectAboveButton);
-            Debug.Log("Object aboce button:" + objectAboveButton);
-
-
-            if (objectAboveButton.name == "Hammer(Clone)")
-            {
-                moneyManager.currentMoney += HammerPrice;
-                moneyManager.UpdateMoneyText();
-            }
-            if (objectAboveButton.name == "Gun(Clone)") 
-            {
-                moneyManager.currentMoney += GunPrice;
-               moneyManager.UpdateMoneyText();
-            }
-            if (objectAboveButton.name == "Armour(Clone)")
-            {
-                moneyManager.currentMoney += ArmourPrice;
-                moneyManager.UpdateMoneyText();
-            }
-            if (objectAboveButton.name == "Boots(Clone)")
-            {
-                moneyManager.currentMoney += BootsPrice;
-                moneyManager.UpdateMoneyText();
-            }
-            if (objectAboveButton.name == "Gloves(Clone)")
-            {
-                moneyManager.currentMoney += GlovesPrice;
-                moneyManager.UpdateMoneyText();
-            }
-            if (objectAboveButton.name == "BowArrow(Clone)")
-            {
-                moneyManager.currentMoney += BowArrowPrice;
-                moneyManager.UpdateMoneyText();
-            }
-            if (objectAboveButton.name == "Potion(Clone)")
-            {
-                moneyManager.currentMoney +=  PotionPrice;
-                moneyManager.UpdateMoneyText();
-            }
-            if (objectAboveButton.name == "Lantern(Clone)")
-            {
-                moneyManager.currentMoney += LanternPrice;
-                moneyManager.UpdateMoneyText();
-            }
-            if (objectAboveButton.name == "TNT(Clone)")
-            {
-                moneyManager.currentMoney += TNTPrice;
-                moneyManager.UpdateMoneyText();
-            }
-            
-            if (objectAboveButton.name == "Shield(Clone)")
-            {
-                moneyManager.currentMoney += ShieldPrice;
-                moneyManager.UpdateMoneyText();
-            }
-
-
-        }
-        else
-        {
-            Debug.Log("No object");
+            Money_Manager.currentMoney += HammerSellPrice;
+            Money_Manager.UpdateMoneyText();
         }
 
-        
+        if (slot.transform.GetChild(1).gameObject.name == "Gun(Clone)")
+        {
+            Money_Manager.currentMoney += GunSellPrice;
+            Money_Manager.UpdateMoneyText();
+        }
+
+        if (slot.transform.GetChild(1).gameObject.name == "Armour(Clone)")
+        {
+            Money_Manager.currentMoney += ArmourSellPrice;
+            Money_Manager.UpdateMoneyText();
+        }
+
+        if (slot.transform.GetChild(1).gameObject.name == "Boots(Clone)")
+        {
+            Money_Manager.currentMoney += BootsSellPrice;
+            Money_Manager.UpdateMoneyText();
+        }
+
+        if (slot.transform.GetChild(1).gameObject.name == "Gloves(Clone)")
+        {
+            Money_Manager.currentMoney += GlovesSellPrice;
+            Money_Manager.UpdateMoneyText();
+        }
+
+        if (slot.transform.GetChild(1).gameObject.name == "BowArrow(Clone)")
+        {
+            Money_Manager.currentMoney += BowArrowSellPrice;
+            Money_Manager.UpdateMoneyText();
+        }
+
+        if (slot.transform.GetChild(1).gameObject.name == "Potion(Clone)")
+        {
+            Money_Manager.currentMoney += PotionSellPrice;
+            Money_Manager.UpdateMoneyText();
+        }
+
+        if (slot.transform.GetChild(1).gameObject.name == "Lantern(Clone)")
+        {
+            Money_Manager.currentMoney += LanternSellPrice;
+            Money_Manager.UpdateMoneyText();
+        }
+
+        if (slot.transform.GetChild(1).gameObject.name == "TNT(Clone)")
+        {
+            Money_Manager.currentMoney += TNTSellPrice;
+            Money_Manager.UpdateMoneyText();
+        }
+
+        if (slot.transform.GetChild(1).gameObject.name == "Shield(Clone)")
+        {
+            Money_Manager.currentMoney += ShieldSellPrice;
+            Money_Manager.UpdateMoneyText();
+        }
     }
 }
+
+// RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, offset, Layer);
+        //
+        // if (hit.collider != null)
+        // {
+        //   //  GameObject sellItem = hit.collider.gameObject;
+        //
+        //
+        //
+        // }
+        // else
+        // {
+        //     Debug.Log("No gfhfd");
+        // }
+        // }
+    
+
+
