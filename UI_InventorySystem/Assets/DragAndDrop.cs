@@ -8,7 +8,7 @@ public class DragAndDrop : MonoBehaviour
 
     // Change these variables according to your inventory slot size
     public float slotSize = 1.0f;
-    private Vector2 inventoryOffset = new Vector2(0.0f, 0.0f); // Offset of the inventory grid
+    private Vector2 Slot = new Vector2(0.0f, 0.0f); // Offset of the inventory grid
 
     public void Start()
     {
@@ -54,6 +54,13 @@ public class DragAndDrop : MonoBehaviour
         foreach (Collider2D collider in colliders)
         {
             if (collider.CompareTag("ChestSlot"))
+            {
+                // Snap the item to the center of the collided chest slot
+                transform.position = collider.bounds.center;
+                return;
+            }
+
+            if (collider.CompareTag("BackpackSlot"))
             {
                 // Snap the item to the center of the collided chest slot
                 transform.position = collider.bounds.center;

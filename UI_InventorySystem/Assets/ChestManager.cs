@@ -1,14 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; 
 
 public class ChestManager : MonoBehaviour
 {
     public List<GameObject> slots = new List<GameObject>();
     public bool[] slotAvailability;
+    
+    public int initialSlotCount = 3; // Initial number of slots in the chest
+    public int maxSlotCount = 10; // Maximum number of slots in the chest
+    public GameObject chestSlotPrefab; // Prefab of the chest slot UI element
+    public Transform chestPanel; // Reference to the chest panel where slots will be instantiated
+    public Button upgradeButton; // Button to upgrade the chest
+    
+    private int currentSlotCount; // Current number of slots in the chest
+
 
     public void Start()
     {
+        currentSlotCount = initialSlotCount;
+        InstantiateChestSlots();
+        CheckUpgradeAvailability();
+        
+        
         // Initialize slot availability array
         slotAvailability = new bool[slots.Count];
         for (int i = 0; i < slots.Count; i++)
@@ -43,5 +58,29 @@ public class ChestManager : MonoBehaviour
         {
             Debug.LogError("Slot not found or index out of range.");
         }
+    }
+    
+    public void InstantiateChestSlots()
+    {
+        for (int i = 0; i < currentSlotCount; i++)
+        {
+            GameObject slot = Instantiate(chestSlotPrefab, chestPanel);
+            slot.name = "ChestSlot_" + i;
+        }
+    }
+
+    public void UpgradeChest()
+    {
+        if (currentSlotCount < maxSlotCount)
+        {
+            currentSlotCount++;
+            InstantiateChestSlots();
+            CheckUpgradeAvailability();
+        }
+    }
+
+    public void CheckUpgradeAvailability()
+    {
+        upgradeButton.interactable = currentSlotCount < maxSlotCount;
     }
 }
