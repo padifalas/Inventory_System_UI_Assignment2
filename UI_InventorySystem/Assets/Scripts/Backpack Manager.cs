@@ -6,6 +6,7 @@ public class BackpackManager : MonoBehaviour
 {
     public List<GameObject> slots = new List<GameObject>();
     public bool[] slotAvailability;
+    public GameObject SelectedSlot { get; private set; }
 
     public void Start()
     {
@@ -52,6 +53,20 @@ public class BackpackManager : MonoBehaviour
         else
         {
             Debug.LogError("Slot not found or index out of range.");
+        }
+    }
+    
+    public void SelectSlot(GameObject slot)
+    {
+        // Check if the slot is available
+        int index = slots.IndexOf(slot);
+        if (index != -1 && slotAvailability[index])
+        {
+            SelectedSlot = slot;
+        }
+        else
+        {
+            Debug.LogWarning("Slot is not available or does not exist.");
         }
     }
 }

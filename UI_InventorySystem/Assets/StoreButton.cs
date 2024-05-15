@@ -2,48 +2,37 @@ using UnityEngine;
 
 public class StoreButton : MonoBehaviour
 {
-    public GameObject chestSlots; // Reference to the chest slots GameObject
-    public PopupManager popupManager; // Reference to the PopupManager
+    public BackpackManager backpackManager; // Reference to the BackpackManager script
+    public ChestManager chestManager; // Reference to the ChestManager script
 
-    // Function to handle storing the item from the backpack slot to the chest slots
-    public void StoreItemInChest(Transform backpackSlot)
+    public void StoreSelectedItemToChest()
     {
-        if (backpackSlot != null && chestSlots != null && backpackSlot.childCount > 0)
+        // Check if a slot in the backpack is selected
+        GameObject selectedBackpackSlot = backpackManager.SelectedSlot;
+        if (selectedBackpackSlot != null)
         {
-            GameObject itemToStore = backpackSlot.GetChild(0).gameObject; // Get the item from the backpack slot
-            // Find an available chest slot
-            Transform availableSlot = FindAvailableChestSlot();
-            if (availableSlot != null)
+            // Check if there's an available slot in the chest
+            GameObject availableChestSlot = chestManager.GetAvailableSlot();
+            if (availableChestSlot != null)
             {
-                // Move the item to the chest slot
-                itemToStore.transform.SetParent(availableSlot);
-                itemToStore.transform.localPosition = Vector3.zero; // Center the item in the slot
-                itemToStore.SetActive(true); // Ensure the item is active
+                // Transfer the item from the backpack to the chest
+                Transform itemTransform = selectedBackpackSlot.transform.GetChild(0); // Assuming the item is a child of the slot
+                itemTransform.SetParent(availableChestSlot.transform);
+                itemTransform.localPosition = Vector3.zero; // Center the item in the chest slot
+
+                // Make the backpack slot available again
+                backpackManager.MakeSlotAvailable(selectedBackpackSlot);
+
+                Debug.Log("Item stored in the chest.");
             }
             else
             {
-                popupManager.ShowPopup("No available chest slot."); // Show popup message
+                Debug.Log("No available slot in the chest.");
             }
         }
         else
         {
-            popupManager.ShowPopup("No item in backpack slot."); // Show popup message
+            Debug.Log("No slot selected in the backpack.");
         }
-    }
-
-    // Function to find an available chest slot
-    private Transform FindAvailableChestSlot()
-    {
-        if (chestSlots != null)
-        {
-            foreach (Transform slot in chestSlots.transform)
-            {
-                if (slot.childCount == 0)
-                {
-                    return slot;
-                }
-            }
-        }
-        return null; // No available chest slot found
     }
 }

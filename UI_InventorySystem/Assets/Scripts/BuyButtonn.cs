@@ -7,7 +7,7 @@ public class BuyButtonn : MonoBehaviour
 {
     public Money_Manager moneyManager;
     public BackpackManager BackpackManager;
-    public PopupManager PopupManager; 
+   // public PopupManager PopupManager; 
 
     public GameObject Hammer,
         Gun,
@@ -90,7 +90,7 @@ public class BuyButtonn : MonoBehaviour
         else
         {
             Debug.Log("Not enough money to purchase the item.");
-            PopupManager.ShowPopup("Not enough money!"); // Show the popup with the specified message
+            //PopupManager.ShowPopup("Not enough money!"); // Show the popup with the specified message
         }
     }
 }
