@@ -24,7 +24,7 @@ public class SellButton : MonoBehaviour
         Destroy(slot.transform.GetChild(1).gameObject);
 
 
-        // Check the name of the item and update money accordingly
+       
 
         if (slot.transform.GetChild(1).gameObject.name == "Hammer(Clone)")
         {

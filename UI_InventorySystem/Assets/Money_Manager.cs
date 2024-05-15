@@ -56,7 +56,8 @@ public class Money_Manager : MonoBehaviour
 
     public void UpdateMoneyText()
     {
-        moneyText.text = "Money: $" + currentMoney.ToString();
+        // moneyText.text = "Money: $" + currentMoney.ToString();
+        moneyText.text = $"Money: ${currentMoney}";
 
         // Change text color if funds are insufficient
         if (currentMoney < 5) // Change here
