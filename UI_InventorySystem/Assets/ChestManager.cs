@@ -6,14 +6,13 @@ public class ChestManager : MonoBehaviour
     public Transform chestPanel; 
     public Button upgradeButton; 
 
-    public int currentSlotIndex = 0;
+    public int currentSlotIndex = 5;
 
     public void Start()
     {
-        // Disable upgrade button if all slots are already active
-        upgradeButton.interactable = currentSlotIndex < chestPanel.childCount;
-
-        // Activate initial slots if needed (optional)
+        
+        upgradeButton.interactable = currentSlotIndex < chestPanel.childCount;//upgrade button stops working when all slots are active
+       
         ActivateNextSlot();
     }
 
